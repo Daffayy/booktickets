@@ -183,7 +183,7 @@ class SearchScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Text("Take love", style: Styles.headLineStyle2
+                        Text("Take  love", style: Styles.headLineStyle2
                             .copyWith(color: Colors.white, fontWeight:
                         FontWeight.bold, ),textAlign: TextAlign.center,),
                         Gap(AppLayout.getHeight(5)),
