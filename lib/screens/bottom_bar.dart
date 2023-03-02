@@ -1,11 +1,13 @@
 import 'package:bootickets/screens/home_screen.dart';
+import 'package:bootickets/screens/profile_screen.dart';
 import 'package:bootickets/screens/search_screen.dart';
+import 'package:bootickets/screens/tickets_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({Key? key}) : super(key: key);
+  const BottomBar({super.key});
 
   @override
   State<BottomBar> createState() => _BottomBarState();
@@ -16,8 +18,8 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget>_widgetoptions =<Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    const Text("Tickets"),
-    const Text("Profile")
+    const TicketScreen(),
+    const ProfileScreen()
   ];
 
   void _onItemTapped(int index){
@@ -42,7 +44,7 @@ class _BottomBarState extends State<BottomBar> {
           selectedItemColor: Colors.blueGrey,
           type: BottomNavigationBarType.fixed,
           unselectedItemColor: const Color(0xff526480),
-            items:   [
+            items:  const [
             BottomNavigationBarItem(icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
                 activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
                 label: "Home"),

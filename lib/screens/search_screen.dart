@@ -1,4 +1,5 @@
 import 'package:bootickets/utils/app_layout.dart';
+import 'package:bootickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -26,49 +27,7 @@ class SearchScreen extends StatelessWidget {
                 .copyWith(fontSize: AppLayout.getWidth(35)),
           ),
           Gap(AppLayout.getHeight(20)),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(3.5),
-              child: Row(
-                children: [
-                  /*
-                airline tickets
-                */
-
-                  Container(
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.getWidth(7)),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(AppLayout.getHeight(50)),
-                        ),
-                        color: Colors.white),
-                    child: Center(child: Text("Airlane tickets")),
-                  ),
-                  /*
-                hotels
-                */
-                  Container(
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.getWidth(7)),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(
-                          right: Radius.circular(AppLayout.getHeight(50)),
-                        ),
-                        color: Colors.transparent),
-                    child: Center(child: Text("Hotels")),
-                  ),
-                ],
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    AppLayout.getHeight(50),
-                  ),
-                  color: const Color(0xfff4f6fd)),
-            ),
-          ),
+          const AppTicketTab(firstTab: "Airline Tickets", secondTab: "Hotels",),
           Gap(AppLayout.getHeight(25)),
           const AppIconText(
               icon: Icons.flight_takeoff_rounded, text: "Departure"),
@@ -99,7 +58,7 @@ class SearchScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height: AppLayout.getHeight(400),
+                height: AppLayout.getHeight(425),
                 width: size.width * 0.42,
                 padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight
                   (15), vertical: AppLayout.getWidth(15)),
@@ -183,13 +142,25 @@ class SearchScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Text("Take  love", style: Styles.headLineStyle2
+                        Text("Take love", style: Styles.headLineStyle2
                             .copyWith(color: Colors.white, fontWeight:
                         FontWeight.bold, ),textAlign: TextAlign.center,),
                         Gap(AppLayout.getHeight(5)),
                         RichText(
                             text: const TextSpan(
                               children:[
+                                TextSpan(
+                                  text: '😍',
+                                  style: TextStyle(fontSize: 38),
+                                ),
+                                TextSpan(
+                                    text: '🥰',
+                                    style: TextStyle(fontSize: 50),
+                                ),
+                                TextSpan(
+                                    text: '😘',
+                                    style: TextStyle(fontSize: 38),
+                                )
                               ]
                             ),
                         ),
